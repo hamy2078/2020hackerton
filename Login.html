@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="css/Login_style.css">
+    <!--<script type="text/javascript"-->
+  </head>
+  <body>
+    <section class = "LOGIN-form">
+      <h1>LOGIN</h1>
+      <form action="">
+        <div class="int-area">
+          <input type="text" name="id"
+          autocomplete="off" required>
+          <label for="id">USER NAME</label>
+        </div>
+        <div class="int-area">
+          <input type="password" name="pw"
+          autocomplete="off" required>
+          <label for="pw">PASSWORD</label>
+        </div>
+        <input type="submit" name="submit" value="sub" id="submit">
+        <div class="btn-area">
+          <button onclick="location='index.html'">LOGIN</button>
+        </div>
+      </form>
+      <div class="caption">
+        <a href="">Forget Password?</a>
+      </div>
+    </section>
+    <script>
+      let id =  $('#id');
+      let pw = $('#pw');
+      let btn = $('#btn');
+
+      $(btn).on('click',function(){
+        if($(id).val==""){
+        $(id).next('label').addClass('warning');
+        setTimeout(function(){
+          $('label').removeClass('warning');
+
+        },1500);
+      }
+      else if($(pw).val==""){
+          $(pw).next('label').addClass('warning');
+          setTimeout(function(){
+            $('label').removeClass('warning');
+
+          },1500);
+      }
+      });
+    </script>
+  </body>
+</html>
